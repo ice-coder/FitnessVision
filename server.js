@@ -21,8 +21,11 @@ app.configure(function() {
 	}));
 	app.use(express.static(__dirname + '/public'));
 });
-
-mongoose.connect('mongodb://localhost/fitnessvision');
+if(env === 'development') {
+	mongoose.connect('mongodb://localhost/fitnessvision');
+} else {
+	mongoose.connect('mongodb://oddig:fitnessvision@ds031329.mongolab.com:31329/fitnessvision');
+}
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error...'));
 db.once('open', function callback() {
