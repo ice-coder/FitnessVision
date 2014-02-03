@@ -1,5 +1,6 @@
-var express = require('express'),
-	stylus = require('stylus');
+var express 	= require('express'),
+	stylus 		= require('stylus'),
+	mongoose 	= require('mongoose');
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -19,6 +20,13 @@ app.configure(function() {
 		compile: compile
 	}));
 	app.use(express.static(__dirname + '/public'));
+});
+
+mongoose.connect('mongodb://localhost/fitnessvision');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error...'));
+db.once('open', function callback() {
+	console.log('fitnessvision db opened');
 });
 
 app.get('/partials/:partialPath', function(req, res) {
