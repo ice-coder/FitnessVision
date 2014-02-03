@@ -1,0 +1,27 @@
+{
+  "name": "FitnessVision",
+  "version": "0.0.0",
+  "description": "Fitness Journal",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ice-coder/FitnessVision.git"
+  },
+  "author": "Thorsteinn Gestsson",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw2.github.com/ice-coder/FitnessVision/master/LICENSE"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/ice-coder/FitnessVision/issues"
+  },
+  "dependencies": {
+    "jade": "~1.1.5",
+    "express": "~3.4.8"
+  }
+}
