@@ -1,12 +1,12 @@
 var express = require('express'),
-	stylus 	= require('stylus');
+	stylus = require('stylus');
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var app = express();
 
 function compile(src, path) {
-	return stylus(src).set('filename', path);
+	return stylus(src).set('filename' + path);
 };
 
 app.configure(function() {
