@@ -1,6 +1,23 @@
 extends ../includes/layout
 
 block main-content
+	.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+		.container
+			.navbar-header
+				button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand(href="/") FitnessVision
+			.collapse.navbar-collapse
+				ul.nav.navbar-nav
+					li.active
+						a(href="/") Home
+
 	section.content
 		div(ng-view)
 	h2= mongoMessage
+
+	footer.container.text-center
+		p &copy 2014 FitnessVision Corp International Ltd.
